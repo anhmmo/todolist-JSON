@@ -75,7 +75,7 @@ function deleteItem(index) {
   yes.addEventListener("click", function() {
     hei.splice(index,1);
     let uusiArr;
-    hei.length === 0 ? uusiArr = JSON.stringify(["sample"]) : uusiArr = JSON.stringify(hei);
+    hei.length === 0 ? uusiArr = JSON.stringify(["Sample"]) : uusiArr = JSON.stringify(hei);
     sendNewBin(uusiArr);
   });
  
@@ -188,6 +188,7 @@ function chooseItem(e) {
 
 let deleteArray = [];
 let filtedArray = [];
+let mangLucSau = [];
 
 let selectedAllPersons = document.getElementById("delete-box");
 let selectedAllStudents = document.getElementById("delete-all-item");
@@ -198,7 +199,7 @@ selectedAllStudents.addEventListener("click", function() {
 });
 
 function selectItemBox(index) {
-
+  mangLucSau = [];
   deleteArray.indexOf(index) === -1 ? deleteArray[index] = index : deleteArray[index] = undefined;
   
   filtedArray = deleteArray.filter(item => typeof item === "number");
@@ -212,16 +213,19 @@ function selectItemBox(index) {
   if(filtedArray.length < 1){
     document.getElementById("select-all").classList.remove('select-checked');
   }
+
+  for (let i = 0; i < hei.length; i++) {
+    if(typeof deleteArray[i] !== "number"){
+      mangLucSau.push(hei[i]);
+    }      
+  }  
+  console.log(mangLucSau);
 }
 
 function deteteSelectedStudents () {
-  let mangLucSau = [];
-for (let i = 0; i < deleteArray.length; i++) {
-  if(typeof deleteArray[i] === "undefined"){
-    mangLucSau.push(hei[i]);
-  }      
-}  
-  let newArray = JSON.stringify(mangLucSau);
+  
+  let newArray;
+  mangLucSau.length === 0 ? newArray = JSON.stringify(["Sample"]) : newArray = JSON.stringify(mangLucSau);
   sendNewBin(newArray);
 }
 
@@ -230,6 +234,7 @@ let selectAll = document.getElementById("select-all");
 selectAll.addEventListener('click', chooseAll ,false);
 
 function chooseAll() {
+
   document.getElementById("select-all").innerHTML = `Check all ${hei.length} items`;
  
   if(this.classList.contains('select-checked')){
