@@ -136,7 +136,7 @@ function sendNewBin(ItemD) {
     if (req.readyState == XMLHttpRequest.DONE) { 
       console.log(req.responseText); 
       readContent();
-      //window.location.reload();
+      window.location.reload();
     } 
   }; 
   
@@ -194,15 +194,15 @@ let selectedAllStudents = document.getElementById("delete-all-item");
 let counterDelete = document.getElementById("delete-counter");
 
 selectedAllStudents.addEventListener("click", function() {
-    deteteSelectedStudents(filtedArray);
+    deteteSelectedStudents();
 });
 
 function selectItemBox(index) {
 
   deleteArray.indexOf(index) === -1 ? deleteArray[index] = index : deleteArray[index] = undefined;
-  console.log(deleteArray);
+  
   filtedArray = deleteArray.filter(item => typeof item === "number");
-  console.log(filtedArray);
+  
   filtedArray.length > 9 ? counterDelete.innerText = filtedArray.length : counterDelete.innerText = "0" + filtedArray.length;
 
   filtedArray.length < 1 ? selectedAllPersons.style.display = "none" : selectedAllPersons.style.display = "block";
@@ -214,14 +214,15 @@ function selectItemBox(index) {
   }
 }
 
-function deteteSelectedStudents (filtedArray) {
- let filtedArr = hei;
-for (let i = filtedArray.length - 1; i >= 0; i--) {
-  if(typeof filtedArray[i] !== "undefined"){
-    filtedArray.splice(i,1);
+function deteteSelectedStudents () {
+  let mangLucSau = [];
+for (let i = 0; i < deleteArray.length; i++) {
+  if(typeof deleteArray[i] === "undefined"){
+    mangLucSau.push(hei[i]);
   }      
 }  
- console.log(filtedArr);
+  let newArray = JSON.stringify(mangLucSau);
+  sendNewBin(newArray);
 }
 
 
@@ -230,14 +231,14 @@ selectAll.addEventListener('click', chooseAll ,false);
 
 function chooseAll() {
   document.getElementById("select-all").innerHTML = `Check all ${hei.length} items`;
-  console.log(hei);
+ 
   if(this.classList.contains('select-checked')){
     this.classList.remove('select-checked');
     this.innerHTML = `Check all ${hei.length} items`;
     for (let index = 0; index < hei.length; index++) {
       list.querySelectorAll("li")[index].classList.remove("checked");
     }
-
+    
     deleteArray = [];
     deleteArray.length < 1 ? selectedAllPersons.style.display = "none" : selectedAllPersons.style.display = "block";
 
@@ -251,6 +252,7 @@ function chooseAll() {
       deleteArray.length < 1 ? selectedAllPersons.style.display = "none" : selectedAllPersons.style.display = "block";
       deleteArray.length > 9 ? counterDelete.innerText = deleteArray.length : counterDelete.innerText = "0" + deleteArray.length;
       filtedArray = deleteArray;
+  
     }
     
   }
