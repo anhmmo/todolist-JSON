@@ -21,8 +21,8 @@ function readContent() {
     } 
   }; 
 
-  req.open("GET", "https://api.jsonbin.io/b/5e5f7034763fa966d40ea330", true); 
-  req.setRequestHeader("secret-key", "$2b$10$p0RiQ1ExtkprMZyCXk1mGONoWjnTcTgcT0.2gVz4jxamiKGNW.uPi"); 
+  req.open("GET", "https://api.jsonbin.io/b/5e5fba7cbaf60366f0e2b400", true); 
+  req.setRequestHeader("secret-key", "$2b$10$jsY90PTMAEGKy6aofWRnAOyZLEFC632Eyna6FZHB4Hc3jYGFTajV6"); 
   req.send(); 
 } 
 
@@ -45,10 +45,10 @@ form.addEventListener("submit", addNewItem, false);
    } 
  }; 
 
- req.open("PUT", "https://api.jsonbin.io/b/5e5f7034763fa966d40ea330", true); 
+ req.open("PUT", "https://api.jsonbin.io/b/5e5fba7cbaf60366f0e2b400", true); 
  req.setRequestHeader("Content-type", "application/json"); 
  req.setRequestHeader("versioning", "false"); 
- req.setRequestHeader("secret-key", "$2b$10$p0RiQ1ExtkprMZyCXk1mGONoWjnTcTgcT0.2gVz4jxamiKGNW.uPi"); 
+ req.setRequestHeader("secret-key", "$2b$10$jsY90PTMAEGKy6aofWRnAOyZLEFC632Eyna6FZHB4Hc3jYGFTajV6"); 
  req.send(formatNewArray); 
 }
 
@@ -140,10 +140,10 @@ function sendNewBin(ItemD) {
     } 
   }; 
   
-  req.open("PUT", "https://api.jsonbin.io/b/5e5f7034763fa966d40ea330", true); 
+  req.open("PUT", "https://api.jsonbin.io/b/5e5fba7cbaf60366f0e2b400", true); 
   req.setRequestHeader("Content-type", "application/json"); 
   req.setRequestHeader("versioning", "false"); 
-  req.setRequestHeader("secret-key", "$2b$10$p0RiQ1ExtkprMZyCXk1mGONoWjnTcTgcT0.2gVz4jxamiKGNW.uPi"); 
+  req.setRequestHeader("secret-key", "$2b$10$jsY90PTMAEGKy6aofWRnAOyZLEFC632Eyna6FZHB4Hc3jYGFTajV6"); 
   req.send(ItemD); 
 }
 
