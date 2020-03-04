@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/efd33a6a78.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>A Simple To-Do List</h1>
+    <h2>Your to-do list online</h2>
+
+    <div id="select-all" class="select-all">Check all items</div>
+    
+    <div class="container">
+      
+        <form id="submit-form" action="#">
+            <input type="text" name="input" id="input" placeholder="Add New" autofocus />
+        </form>  
+
+        <ul id="todo-list"></ul>
+
+        <div id="info-popup">
+            <p id="content"></p>
+            <p id="created-date"></p>
+            <p id="modifited-date">modified date :</p>
+            <button id="exit">Exit</button>
+        </div>
+
+        <div id="edit-popup">
+            <input id="old-item" type="text" />
+            <button id="change">Change</button>
+            <button id="cancel">Cancel</button>
+        </div>
+
+        <div id="delete-popup">
+            <p>Are you sure want to delete this item?</p>
+            <button id="yes">Yes</button>
+            <button id="no">No</button>
+        </div>
+    </div>
+
+    <div id="delete-box">
+        <p id="delete-counter"></p>
+        <i id="delete-all-item" class="fas fa-trash-alt"></i>
+        <span class="delete-tooltip">delete selected items</span>
+    </div>
+
+    <div id="mobile-menu">
+        <p id="mobile-content"></p>
+        <p id="mobile-created-date"></p>
+        <p id="mobile-modify-date"></p>
+        <input id="mobile-change-input" type="text">
+        <button id="save">save</button>
+        <button id="exit">exit</button>
+    </div>
+
+<script src="main.js"></script>
+</body>
+</html>

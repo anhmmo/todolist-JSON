@@ -1,0 +1,298 @@
+html {
+    font-size: 10px;
+}
+
+body {
+    background: #eee;
+    color: #444;
+    font-family: 'Helvetica', arial, sans-serif;
+    font-size: 1.6rem;
+}
+
+/*Header and main title*/
+h1, h2 {
+    text-align: center;
+}
+
+h2 {
+    color: gray;
+}
+
+/*select-all section*/
+.select-all {
+    max-width: 17rem;
+    margin: 4rem auto 1.5rem auto;
+}
+
+.select-all::before {
+    content: "\25A2";
+}
+
+.select-checked {
+    color: green;
+}
+
+.select-checked:before {
+    content: "\2705";
+}
+
+/*element has same properties*/
+
+.select-all::before, .select-checked:before, ul li:before, .checked::before {
+    padding: 1rem;
+    font-size: 2rem;
+}
+
+/*cursor pointer all element*/
+
+.select-all:hover, ul li:before, #todo-list i:hover, #edit-popup button, #delete-popup button, #info-popup button, #delete-all-item {
+    cursor: pointer;
+ }
+
+/*container*/
+.container {
+    background: #fff;
+    max-width: 60rem;
+    width: 100%;
+    display: table;
+    margin: 0 auto;
+    border: 1px solid #cfcbcc;
+}
+
+/*form and list*/
+
+input {
+    border: none;
+    display: block;
+    width: 98.4%;
+    line-height: 1.5;
+    padding: .8rem 0 .8rem 1rem;
+    border-bottom: 1px solid #cfcbcc;
+    outline: 0;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    color: #899098;
+    font-weight: 400;
+    border-bottom: 1px solid #cfcbcc;
+    line-height: 1.5;
+    padding: .8rem 0;
+    word-wrap: break-word;
+}
+
+ul li:before {
+    content: "\25A2";
+}
+
+ul li:last-child {
+    border-bottom: none;
+}
+.checked {
+    color: green;
+}
+.checked:before {
+    content: "\2705";
+}
+.checked:hover {
+    text-decoration: none;
+}
+
+#todo-list i {
+    display: block;
+    font-size: 2.2rem;
+    color: #444;
+    float: right;
+    margin-top: 5px;
+    margin-right: 2.5rem;
+}
+
+#todo-list i:hover {
+    color: red;
+}
+
+#edit-popup, #delete-popup, #info-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    max-width: 30rem;
+    width: 100%;
+    background: linear-gradient(to right bottom, #ff5331, #a71c5a);
+    padding: 5rem;
+}
+
+#edit-popup #old-item{
+    border: 0;
+    outline: 0;
+    margin-bottom: 3rem;
+    border: 3px solid red;
+    outline: 3px solid rgb(255, 255, 255);
+}
+
+#edit-popup button, #delete-popup button, #info-popup button{
+    border: 0;
+    outline: 0;
+    padding: 1rem 2.5rem;
+    margin-left: 3.5rem;
+    background-color: rgb(71, 255, 117);
+    color: white;
+    text-transform: uppercase;
+}
+
+#edit-popup #cancel, #delete-popup #no{
+    background-color: tomato;
+}
+
+#edit-popup {
+    display: none;
+} 
+
+#delete-popup {
+    display: none;
+}
+
+#delete-popup p, #info-popup p {
+    color: white;
+    font-size: 1.7rem;
+}
+
+#info-popup {
+    display: none;
+    max-width: 50rem;
+} 
+
+#info-popup #content{
+    text-align: center;
+    font-size: 2rem;
+} 
+
+#info-popup button {
+    margin-left: 40%;
+}
+
+/*delete-box section*/
+#delete-box{
+    display: none;
+    position: fixed;
+    top: 13.5%;
+    left: 10%;
+}
+
+#delete-all-item {
+    font-size: 3rem;
+}
+
+#delete-all-item:hover {
+    color: red;
+}
+
+#delete-box p{
+    margin: 0;
+    color: red;
+    font-size: 3rem;
+    margin: 0 0 1rem -2%;
+}
+
+/*mobile-menu section*/
+#mobile::after {
+    display: none;
+    float: right;
+    margin-top: 4px;
+    margin-right: 1rem;
+    content: "\2807";
+    text-decoration: none;
+    color: #2c2c2c;
+}
+
+.delete-tooltip{
+    font-size: 1.6rem;
+    color: white;
+    border-radius: 5px;
+    background-color: rgb(253, 109, 84);
+    padding: 0 5px;
+}
+
+/*mobile-menu popup*/
+#mobile-menu {
+    display: none;
+    max-width: 50rem;
+    width: 100%;
+    padding: 2rem 5rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: linear-gradient(to right bottom, #ff5331, #a71c5a);
+}
+
+#mobile-menu p{
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+}
+
+#mobile-menu input{
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 2rem;
+}
+
+#mobile-menu button{
+    width: 25%;
+    padding: 5px;
+    text-transform: uppercase;
+    color: white;
+    font-size: 1.8rem;
+    text-align: center;
+    margin: 1rem 0 1rem 16%;
+}
+
+#mobile-menu #save {
+    background-color: rgb(41, 241, 124);
+}
+
+#mobile-menu #exit {
+    background-color: rgb(240, 59, 35);
+}
+
+/*mobile responsive section*/
+@media (max-width: 1030px) {
+    #delete-box{
+        top: 8%;
+        left: 12%;
+    }
+}
+
+@media (max-width: 700px) {
+    #mobile::after {
+        display: block;
+    }
+    #todo-list i {
+        display: none;
+    }
+    .delete-tooltip {
+        display: none;
+    }
+    #delete-box{
+        top: 16.6%;
+    }
+    #delete-all-item{
+        font-size: 2.5rem;
+    }
+    #delete-box p {
+        margin-bottom: 2px;
+        font-size: 2.3rem;
+    }
+}
+
+@media (max-width: 320px) {
+    #delete-box{
+        top: 22.6%;
+    }
+}
