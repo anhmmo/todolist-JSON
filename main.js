@@ -58,6 +58,8 @@ form.addEventListener("submit", addNewItem, false);
  req.send(formatNewArray); 
 }
 
+//delete item function has confirm box
+
 function deleteItem(index) {
   preventListFunction(index);
 
