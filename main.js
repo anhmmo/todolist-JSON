@@ -9,6 +9,9 @@ input = document.querySelector('#input');
 readContent();
 let hei;
 
+
+
+//read and render items to the list
 function readContent() { 
   let req = new XMLHttpRequest(); 
   req.onreadystatechange = () => { 
