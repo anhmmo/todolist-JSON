@@ -92,6 +92,9 @@ function deleteItem(index) {
   });
 }
 
+
+//edit item info
+
 function editItem(index) {
   preventListFunction(index);
   let editPopup = document.getElementById("edit-popup");
