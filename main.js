@@ -32,6 +32,7 @@ function readContent() {
 } 
 
 
+//add new item to the form, then send it to the server
 form.addEventListener("submit", addNewItem, false);
   function addNewItem(e) {
     e.preventDefault();
