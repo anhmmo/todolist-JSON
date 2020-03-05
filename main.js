@@ -1,3 +1,5 @@
+"use strict";
+
 
 let list = document.querySelector('#todo-list'),
 form = document.querySelector('#submit-form'),
