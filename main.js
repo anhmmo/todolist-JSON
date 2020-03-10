@@ -122,8 +122,6 @@ function editItem(index) {
   });
 }
 
-let a = 2342;
-
 function infoItem(index) {
   preventListFunction(index);
   let infoPopup = document.getElementById("info-popup");
