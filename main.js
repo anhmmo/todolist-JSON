@@ -158,21 +158,6 @@ function sendNewBin(ItemD) {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function preventListFunction (index) {
   list.removeEventListener("click", chooseItem);
   list.querySelectorAll("li")[index].onclick = null;
